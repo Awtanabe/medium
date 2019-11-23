@@ -5,6 +5,12 @@
     <% @posts.each do |post| %>
       <h3><%=post.title%></h3>
       <h5 class="text-secondary"><%=post.user.email%></h5>
+
+      <%if current_user.following?(post.user) %>
+        <%=link_to "unfollow", relationships_destroy_path(other_user_id: post.user.id), method: :delete, class:"btn btn-primary"%>
+      <%else %>
+          <%=link_to "follow", relationships_create_path(other_user_id: post.user.id), method: :post, class:"btn btn-primary"%>
+      <%end %>  
       <h5><%=image_tag post.image.url%></h5>  
       <h5><%=post.body%></h5>  
       <%if post.likes.find_by(post_id: post.id) %>

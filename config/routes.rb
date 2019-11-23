@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'relationships/create'
+  delete 'relationships/destroy'
   devise_for :users
   resources :posts
   resources :likes

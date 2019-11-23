@@ -12,6 +12,9 @@
   <body>
     <div class="navbar bg-dark">
       <div class="navbar-brand text-white">Medium</div>
+      <div class="ml-right">
+       <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+      </div>
     </div>
     <%= yield %>
   </body>
