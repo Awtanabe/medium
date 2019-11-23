@@ -1,0 +1,20 @@
+
+@startuml
+
+class 投稿 <<Post>>{
+  タイトル: title 
+  内容: body
+  画像: image
+}
+
+class ユーザー <<User>>{
+  email
+  password
+}
+
+class フォロー <<RelationShip>>{
+  foller_id:
+  follow_id:
+} 
+
+@enduml
